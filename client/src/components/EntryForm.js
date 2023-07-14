@@ -1,114 +1,87 @@
-import React, { useState } from "react";
-import Dropdown from "react-select";
-import { Clients } from "../data/data";
+import React, { useState } from 'react';
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { Clients } from '../data/data'; // Importing Clients from separate file
 
-const TabbedForm = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const [selectedClient, setSelectedClient] = useState(null);
-  const [selectedSize, setSelectedSize] = useState("");
-  const [selectedFlavor, setSelectedFlavor] = useState("");
+const EntryForm = () => {
+  const [selectedClient, setSelectedClient] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedFlavor, setSelectedFlavor] = useState('');
 
-  const handleTabChange = (tabIndex) => {
-    setActiveTab(tabIndex);
+  const handleClientChange = (e) => {
+    const selectedClient = e.target.value;
+    setSelectedClient(selectedClient);
+    setSelectedSize('');
+    setSelectedFlavor('');
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here
+  const handleSizeChange = (e) => {
+    const selectedSize = e.target.value;
+    setSelectedSize(selectedSize);
+    setSelectedFlavor('');
   };
 
-  const handleClientChange = (selectedOption) => {
-    setSelectedClient(selectedOption);
-    setSelectedSize("");
-    setSelectedFlavor("");
+  const handleFlavorChange = (e) => {
+    const selectedFlavor = e.target.value;
+    setSelectedFlavor(selectedFlavor);
   };
-
-  const handleSizeChange = (selectedOption) => {
-    setSelectedSize(selectedOption);
-    setSelectedFlavor("");
-  };
-
-  const handleFlavorChange = (selectedOption) => {
-    setSelectedFlavor(selectedOption);
-  };
-
-  const clientOptions = Object.values(Clients).map((client) => ({
-    label: client.client_name,
-    value: client.client_name,
-  }));
-
-  const selectedClientData = selectedClient ? Clients[selectedClient.value] : null;
-  const sizeOptions = selectedClientData
-    ? selectedClientData.sku_sizes.map((size) => ({
-        label: size,
-        value: size,
-      }))
-    : [];
-
-  const flavorOptions =
-    selectedSize &&
-    selectedClientData &&
-    selectedClientData.sku_names[selectedSize.value]
-      ? selectedClientData.sku_names[selectedSize.value].map((flavor) => ({
-          label: flavor,
-          value: flavor,
-        }))
-      : [];
 
   return (
-    <div style={{ maxWidth: "80%" }}>
-      <ul className="tab-list">
-        <li className={activeTab === 0 ? "active" : ""} onClick={() => handleTabChange(0)}>
-          HPP1
-        </li>
-        <li className={activeTab === 1 ? "active" : ""} onClick={() => handleTabChange(1)}>
-          HPP2
-        </li>
-        <li className={activeTab === 2 ? "active" : ""} onClick={() => handleTabChange(2)}>
-          HPP3
-        </li>
-        <li className={activeTab === 3 ? "active" : ""} onClick={() => handleTabChange(3)}>
-          Pack Off
-        </li>
-        <li className={activeTab === 4 ? "active" : ""} onClick={() => handleTabChange(4)}>
-          Thawing
-        </li>
-      </ul>
-
-      <div className="form-container">
-        {activeTab === 0 && (
-          <form onSubmit={handleSubmit}>
-            <Dropdown
-              placeholder="Select Client"
-              value={selectedClient}
-              onChange={handleClientChange}
-              options={clientOptions}
-            />
-            {selectedClient && (
-              <div>
-                <Dropdown
-                  placeholder="Select SKU Size"
-                  value={selectedSize}
-                  onChange={handleSizeChange}
-                  options={sizeOptions}
-                />
-                {selectedSize && (
-                  <Dropdown
-                    placeholder="Select Flavor"
-                    value={selectedFlavor}
-                    onChange={handleFlavorChange}
-                    options={flavorOptions}
-                    isDisabled={!selectedSize}
-                  />
-                )}
-              </div>
-            )}
-            <button type="submit">Submit</button>
-          </form>
-        )}
-      </div>
+    <div className='formContainer'style={{padding: '15px'}}>
+      <FormControl sx={{ m: 1, minWidth: 200}}>
+        <InputLabel id="client-label" sx={{background: 'white' }}>Select a client</InputLabel>
+        <Select
+          labelId="client-label"
+          id="client-select"
+          value={selectedClient}
+          onChange={handleClientChange}
+        >
+          <MenuItem value="">
+            <em>-- Select Client --</em>
+          </MenuItem>
+          {Object.keys(Clients).map((key) => (
+            <MenuItem key={key} value={key}>
+              {Clients[key].client_name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <br />
+      <FormControl sx={{ m: 1, minWidth: 200 }} disabled={!selectedClient}>
+        <InputLabel id="size-label">Select a size</InputLabel>
+        <Select labelId="size-label" id="size-select" value={selectedSize} onChange={handleSizeChange}>
+          <MenuItem value="">
+            <em>-- Select Size --</em>
+          </MenuItem>
+          {selectedClient &&
+            Clients[selectedClient].sku_sizes.map((size) => (
+              <MenuItem key={size} value={size}>
+                {size}
+              </MenuItem>
+            ))}
+        </Select>
+      </FormControl>
+      <br />
+      <FormControl sx={{ m: 1, minWidth: 200 }} disabled={!selectedSize}>
+        <InputLabel id="flavor-label">Select a flavor</InputLabel>
+        <Select
+          labelId="flavor-label"
+          id="flavor-select"
+          value={selectedFlavor}
+          onChange={handleFlavorChange}
+        >
+          <MenuItem value="">
+            <em>-- Select Flavor --</em>
+          </MenuItem>
+          {selectedSize &&
+            Clients[selectedClient].sku_names[selectedSize].map((flavor) => (
+              <MenuItem key={flavor} value={flavor}>
+                {flavor}
+              </MenuItem>
+            ))}
+        </Select>
+      </FormControl>
     </div>
   );
 };
 
-export default TabbedForm;
+export default EntryForm;
