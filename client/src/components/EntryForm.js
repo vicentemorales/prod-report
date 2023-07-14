@@ -47,7 +47,7 @@ const EntryForm = () => {
       </FormControl>
       <br />
       <FormControl sx={{ m: 1, minWidth: 200 }} disabled={!selectedClient}>
-        <InputLabel id="size-label">Select a size</InputLabel>
+        <InputLabel id="size-label" sx={{background: 'white' }}>Select a size</InputLabel>
         <Select labelId="size-label" id="size-select" value={selectedSize} onChange={handleSizeChange}>
           <MenuItem value="">
             <em>-- Select Size --</em>
@@ -62,7 +62,7 @@ const EntryForm = () => {
       </FormControl>
       <br />
       <FormControl sx={{ m: 1, minWidth: 200 }} disabled={!selectedSize}>
-        <InputLabel id="flavor-label">Select a flavor</InputLabel>
+        <InputLabel id="flavor-label" sx={{background: 'white' }}>Select a flavor</InputLabel>
         <Select
           labelId="flavor-label"
           id="flavor-select"

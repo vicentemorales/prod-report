@@ -2,18 +2,23 @@ export const Clients = {
     //BAKAVAR
     BAKAVAR: {
         client_name: 'Bakavar',
-        sku_sizes: '12 oz',
+        sku_sizes: ['12 oz', '16 oz'],
         sku_names:{
-            '12oz': ['Tzaziki']
+            '12 oz': ['3 Layer Hummus','Tzaziki'],
+            '16 oz': ['TJs Mediterranean Hummus']
         }
     },
 
     //Bar M
     BARM: {
         client_name: 'BarM',
-        sku_sizes: '16 oz',
+        sku_sizes: ['0.92 lbs', '15 oz', '16 oz', '32 oz'],
         sku_names: {
-            '16 oz': ['Chicken Andoville']
+            '0.92 lbs': ['Cooked Corned Beef','Chicken Andoville', 'Deli Pastrami', 'Italian Roast Beef', 'Roast Beef'],
+            '15 oz': ['Cooked Corned Beef','Chicken Andoville', 'Deli Pastrami', 'Italian Roast Beef', 'Roast Beef'],
+            '16 oz': ['Cooked Corned Beef','Chicken Andoville', 'Deli Pastrami', 'Italian Roast Beef', 'Roast Beef'],
+            '32 oz': ['Cooked Corned Beef','Chicken Andoville', 'Deli Pastrami', 'Italian Roast Beef', 'Roast Beef']
+
         }
     },
 
@@ -32,54 +37,70 @@ export const Clients = {
     },
     //Copra Trader Joes
     COPRA: {
-      client_name: 'COPRA',
-      sku_sizes: ['8 oz', '10 oz'],
-      sku_names: {
-        '8 oz': ['Coconut Water 8 oz',],
-        '10 oz': ['Coconut Smoothie 10 oz'],
-      },
+        client_name: 'COPRA',
+        sku_sizes: ['8 oz', '10 oz'],
+        sku_names: {
+            '8 oz': ['Coconut Water 8 oz'],
+            '10 oz': ['Coconut Smoothie 10 oz'],
+        },
     },
+
     //El Sol
     ELSOL:{
         client_name: 'El Sol',
         sku_sizes: ['32 oz', '50 oz'],
         sku_names:{
-            '32 oz': 'Medium Salsa'
+            '32 oz': ['Medium Salsa'],
+            '50 oz': ['Medium Salsa']
         }
     },
     
-    //Fresh Cravings
-    FRESHCRAVINGS:{},
+    // //Fresh Cravings
+    FRESHCRAVINGS:{
+        client_name: 'Fresh Cravings',
+        sku_sizes: ['8 oz'],
+        sku_names: {
+            '8 oz': ['(Conventional) Kickin Queso', 'French Onion', 'Spinach Artichoke', 'Jalapeño Popper','Organic Kickin Queso']
+        }
 
-    //Forager Project
-    FORAGER:{},
+    },
 
-    //Golden West
-    GOLDENWEST:{},
+    // //Forager Project
+    FORAGER:{
+        client_name: 'Forager',
+        sku_sizes: ['12 oz', '48 oz'],
+        sku_names: {
+            '12 oz': ['Chocolate', 'Strawberry','Vanilla'],
+            '48 oz': ['Cashew Milk','Oat Milk']
+        }
+    },
 
-    //Harmless Harvest
-    HARMLESSHARVEST:{},
+    // //Golden West
+    // GOLDENWEST:{},
 
-    //InSpirit DRNXMYTH
-    INSPIRIT: {},
+    // //Harmless Harvest
+    // HARMLESSHARVEST:{},
 
-    //Jamba
-    JAMBA:{},
+    // //InSpirit DRNXMYTH
+    // INSPIRIT: {},
 
-    //Juice Connection
-    JUICECONNECTION: {},
+    // //Jamba
+    // JAMBA:{},
 
-    //Juice Farm
-    JUICEFARM: {},
+    // //Juice Connection
+    // JUICECONNECTION: {},
 
-    //Kor Shots
-    KOR:{},
+    // //Juice Farm
+    // JUICEFARM: {},
 
-    //Lagudis
-    LAGUDIS: {},
+    // //Kor Shots
+    // KOR:{},
 
-    //Little West
-    LITTLEWEST: {},
+    // //Lagudis
+    // LAGUDIS: {},
+
+    // //Little West
+    // LITTLEWEST: {},
 
     //Nekter Juice Bar
     NEKTER: {
@@ -90,23 +111,23 @@ export const Clients = {
       },
     },
 
-    //Papa Cantellas
-    PAPACANTELLAS: {},
+    // //Papa Cantellas
+    // PAPACANTELLAS: {},
 
-    //Rose and Shore
-    ROSEANDSHORE: {},
+    // //Rose and Shore
+    // ROSEANDSHORE: {},
 
-    //South Western Salsa
-    SOUTHWESTERNSALSA: {},
+    // //South Western Salsa
+    // SOUTHWESTERNSALSA: {},
 
-    //Sunny Fine Foods
-    SUNNYFINEFOODS: {},
+    // //Sunny Fine Foods
+    // SUNNYFINEFOODS: {},
 
-    //Trinity
-    TRINITY: {},
+    // //Trinity
+    // TRINITY: {},
 
-    //Vitality
-    Vitality: {},
+    // //Vitality
+    // Vitality: {},
 
 
   };
