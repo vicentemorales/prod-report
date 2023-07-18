@@ -75,26 +75,75 @@ export const Clients = {
         }
     },
 
-    // //Golden West
-    // GOLDENWEST:{},
+    //Golden West
+    GOLDENWEST:{
+        client_name: 'Golden West',
+        sku_sizes: ['17 oz'],
+        sku_names: {
+            '17 oz': ['Pork Chile Verde']
+        },
+    },
 
     // //Harmless Harvest
-    // HARMLESSHARVEST:{},
+    HARMLESSHARVEST:{
+        client_name: 'Harmless Harvest',
+        sku_sizes: ['12 oz','16 oz', '32 oz'],
+        sku_names: {
+            '12 oz': ['Coconut Water'],
+            '16 oz': ['Coconut Water'],
+            '32 oz': ['Coconut Water']
+        }
+    },
 
-    // //InSpirit DRNXMYTH
-    // INSPIRIT: {},
+    //InSpirit DRNXMYTH
+    INSPIRIT: {
+        client_name: 'INSPIRIT',
+        sku_sizes: ['200 ml'],
+        sku_names: {
+           '200 ml': ['Apricot Rye Smash', 'Bloody Mary', 'Bourbon Berry Smash', 'Bourbon Sour', 'Classic Margarita', 'Clover Club', 'Coffee Mint Mojito', 'Cosmo', 'Cucumber Margarita', 'Dillinger Fix', 'Eastside', 'Espresso Martini', 'Gimlet', 'Gin Blackberry Bramble', 'Ginger Drop', 'Grapefruit Paloma', 'Green Apple Mule', 'Hibiscus Haze', 'Jack Rose', 'Kiwi Kooler', 'Mango Chamoy Margarita', 'Mango Passionfruit Daquiri', 'Maple Apple Toddy', 'Mexican Coffee', 'Mezcal Margarita', 'Pea Sidecar', 'Piña Sour', 'Pineapple Jalapeño Margarita', 'Rose Sangria', 'Rum Punch', 'Sake Melon Sour', 'Smoked Watermelon', 'Spiced Mai Tai', 'Spiced Sangria', 'Spiked Lemon Tea', 'Strawberry Margarita', 'Strawberry Mojito', 'Tangerine Bomber', 'Tequila Sunrise', 'Watermelon Fresca']
+        }
+    },
 
     // //Jamba
-    // JAMBA:{},
+    JAMBA:{
+        client_name: 'Jamba',
+        sku_sizes: ['2 oz'],
+        sku_names: {
+            '2 oz': ['Ginger Shot', 'Turmeric Shot', 'Wheatgrass Shot']
+        }
 
-    // //Juice Connection
-    // JUICECONNECTION: {},
+    },
 
-    // //Juice Farm
-    // JUICEFARM: {},
+    //Juice Connection
+    JUICECONNECTION: {
+        client_name: 'Juice Connection',
+        sku_sizes: ['16 oz', '32 oz', '64 oz', '128 oz'],
+        sku_names:{
+            '16 oz': ['Apple', 'Apple Beet', 'Apple Snap', 'Beet', 'Beta Blend', 'Blackberry Juice', 'Blood Orange', 'Carrot', 'Carrot Beet', 'Carrot Ginger', 'Celery', 'Chlorophyll', 'Detoxifier', 'Ginger', 'Kale', 'Lemonade Ginger Turmeric', 'Lemonade Mango', 'Lemonade Turmeric', 'Lime', 'Mango Smoothie', 'Orange', 'Pineapple', 'Pomegranate', 'PPOG', 'Prickly Pear', 'Rasberry', 'Soursop', 'Spinach', 'Tomato', 'Ultra Cleanse', 'Watermelon'],
+            '32 oz': ['Apple', 'Apple Beet', 'Apple Snap', 'Beet', 'Beta Blend', 'Blackberry Juice', 'Blood Orange', 'Carrot', 'Carrot Beet', 'Carrot Ginger', 'Celery', 'Chlorophyll', 'Detoxifier', 'Ginger', 'Kale', 'Lemonade Ginger Turmeric', 'Lemonade Mango', 'Lemonade Turmeric', 'Lime', 'Mango Smoothie', 'Orange', 'Pineapple', 'Pomegranate', 'PPOG', 'Prickly Pear', 'Rasberry', 'Soursop', 'Spinach', 'Tomato', 'Ultra Cleanse', 'Watermelon'],
+            '64 oz': ['Apple', 'Apple Beet', 'Apple Snap', 'Beet', 'Beta Blend', 'Blackberry Juice', 'Blood Orange', 'Carrot', 'Carrot Beet', 'Carrot Ginger', 'Celery', 'Chlorophyll', 'Detoxifier', 'Ginger', 'Kale', 'Lemonade Ginger Turmeric', 'Lemonade Mango', 'Lemonade Turmeric', 'Lime', 'Mango Smoothie', 'Orange', 'Pineapple', 'Pomegranate', 'PPOG', 'Prickly Pear', 'Rasberry', 'Soursop', 'Spinach', 'Tomato', 'Ultra Cleanse', 'Watermelon'],
+            '128 oz': ['Apple', 'Apple Beet', 'Apple Snap', 'Beet', 'Beta Blend', 'Blackberry Juice', 'Blood Orange', 'Carrot', 'Carrot Beet', 'Carrot Ginger', 'Celery', 'Chlorophyll', 'Detoxifier', 'Ginger', 'Kale', 'Lemonade Ginger Turmeric', 'Lemonade Mango', 'Lemonade Turmeric', 'Lime', 'Mango Smoothie', 'Orange', 'Pineapple', 'Pomegranate', 'PPOG', 'Prickly Pear', 'Rasberry', 'Soursop', 'Spinach', 'Tomato', 'Ultra Cleanse', 'Watermelon']
+        }
+    },
 
-    // //Kor Shots
-    // KOR:{},
+    //Juice Farm
+    JUICEFARM: {
+        client_name: 'Juice Farm',
+        sku_sizes: ['2 oz','16 oz'],
+        sku_names: {
+            '2 oz': ['Aloha Watermelon', 'Beets Carrots Greens', 'Better Than Espresso', 'Carrot Apple Ginger', 'Celery Juice', 'Citrus Carrot Ginger', 'Clean Zing', 'Defense', 'Detox', 'Glow', 'Just Greens', 'Just Greens and Apple', 'Matcha Green Caffeine', 'Orange Blast!', 'Pom-Pear', 'Power Thru', 'Refresh', 'Rejuvenate', 'SAMPLES', 'Sunny Day', 'Super Greens', 'Sweet Greens', 'Zinger'],
+            '16 oz': ['Aloha Watermelon', 'Beets Carrots Greens', 'Better Than Espresso', 'Carrot Apple Ginger', 'Celery Juice', 'Citrus Carrot Ginger', 'Clean Zing', 'Defense', 'Detox', 'Glow', 'Just Greens', 'Just Greens and Apple', 'Matcha Green Caffeine', 'Orange Blast!', 'Pom-Pear', 'Power Thru', 'Refresh', 'Rejuvenate', 'SAMPLES', 'Sunny Day', 'Super Greens', 'Sweet Greens', 'Zinger']
+        }
+    },
+
+    //Kor Shots
+    KOR:{
+        client_name: 'KOR Shots',
+        sku_sizes: ['1.75 oz'],
+        sku_names:{
+        '1.75 oz': ['DeStress', 'Elderberry Zinc', 'Focus Fuel', 'Green Up', 'Gut Check', 'Immune +', 'Intense Defense', 'Kids Apple', 'Kids Dragonfruit Elderberry', 'Kids Orange', 'Lyposomal Vit C', 'Omega Ginger', 'Poten-C', 'Restore', 'Vitality', 'Wellness', 'Wellness Fire']
+        }
+    },
 
     // //Lagudis
     // LAGUDIS: {},
