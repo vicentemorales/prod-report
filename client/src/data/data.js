@@ -1,7 +1,7 @@
 export const Clients = {
     //BAKAVAR
-    BAKAVAR: {
-        client_name: 'Bakavar',
+    BAKAVOR: {
+        client_name: 'Bakkavor',
         sku_sizes: ['12 oz', '16 oz'],
         sku_names:{
             '12 oz': ['3 Layer Hummus','Tzaziki'],
@@ -145,8 +145,18 @@ export const Clients = {
         }
     },
 
-    // //Lagudis
-    // LAGUDIS: {},
+    //Lagudis
+    LAGUDIS: {
+        client_name: 'Lagudis',
+        sku_sizes: ['2 oz', '12 oz', '64 oz', '128 oz'],
+        sku_names: {
+            '2 oz': ['Immunity Shot'],
+            '16 oz': ['Carrot Juice', 'Grapefruit', 'Greens and Apple', 'Lemon', 'Lime', 'Orange', 'Watermelon'],
+            '64 oz': ['Carrot Juice', 'Grapefruit', 'Greens and Apple', 'Lemon', 'Lime', 'Orange', 'Watermelon'],
+            '128 oz': ['(Mixer) Cucumber Lime', '(Mixer) Margarita', '(Mixer) Mint Berry', '(Mixer) Sweet and Sour','Carrot Juice', 'Grapefruit', 'Greens and Apple', 'Lemon', 'Lime', 'Orange', 'Watermelon']
+        }
+
+    },
 
     // //Little West
     // LITTLEWEST: {},
@@ -154,45 +164,70 @@ export const Clients = {
     //Nekter Juice Bar
     NEKTER: {
       client_name: 'Nekter',
-      sku_sizes: ['16 oz'],
+      sku_sizes: ['2 oz','16 oz'],
       sku_names: {
-        '16 oz': ['Healing Greens'],
+        '2 oz': ['Immunity Shot'],
+        '16 oz': ['Berry Detox', 'Celery Detox','Classic Greens','Healing Greens', 'Magic Butterfly', 'Skinny Lemonade', 'Turmeric Citrus', 'Vanilla Protein'],
       },
     },
 
-    // //Papa Cantellas
-    // PAPACANTELLAS: {},
+    //Papa Cantellas
+    PAPACANTELLAS: {
+        client_name: 'Papa Cantellas',
+        sku_sizes: ['12.8 oz'],
+        sku_names: {
+            '12.8 oz': ['Chicken Andoville Sausage', 'Chicken Apple Sausage', 'Pork Double Cheddar Sausage']
+        }
+    },
 
-    // //Rose and Shore
-    // ROSEANDSHORE: {},
+    //Rose and Shore
+    ROSEANDSHORE: {
+        client_name: 'Rose and Shore',
+        sku_sizes: ['16 oz', '17 oz'],
+        sku_sizes: {
+            '16 oz': ['Citrus Ginger Chicken'],
+            '17 oz': ['Honey Garlic Chicken']
+        }
+    },
 
-    // //South Western Salsa
-    // SOUTHWESTERNSALSA: {},
+    //South Western Salsa
+    SOUTHWESTERNSALSA: {
+        client_name: '505 Southwestern Salsa',
+        sku_sizes: ['12 oz'],
+        sku_names: {
+            '12 oz': ['Yucatan Mild Fresh Salsa']
+        }
+    },
 
-    // //Sunny Fine Foods
-    // SUNNYFINEFOODS: {},
+    //Sunny Fine Foods
+    SUNNYFINEFOODS: {
+        client_name: 'Sunny Fine Foods',
+        sku_sizes: ['8 oz'],
+        sku_names: {
+            '8 oz': ['Tahini Sauce']
+        }
+    },
 
-    // //Trinity
-    // TRINITY: {},
+    //Trinity
+    TRINITY: {
+        client_name: 'Trinity',
+        sku_sizes: ['11 oz', '32 oz'],
+        sku_names: {
+            '11 oz': ['Focus', 'Immunity','Mandarin','Pomegranate', 'Power'],
+            '32 oz': ['Focus', 'Immunity','Mandarin','Pomegranate', 'Power'],
+        }
+    },
 
-    // //Vitality
-    // Vitality: {},
+    //Vitality
+    Vitality: {
+        client_name: 'Vitality',
+        sku_sizes: ['2 oz','12 oz'],
+        sku_names: {
+            '2 oz':[],
+            '12 oz': []
+        }
+    },
 
 
   };
-  
-
-//   const BitchinSauce = {
-//     client_name: 'Bitchin Sauce',
-//     sku_sizes: ['1.75 oz', '2 oz', '7 oz', '8 oz', '15 oz', '24 oz'],
-//     sku_names: {
-//       '1.75 oz': ["Chipotle", "Original"],
-//       '2 oz': ["Chipotle", "Original"],
-//       '7 oz': ["Organic Buffalo", "Organic Green Onion", "Organic Roasted Green Chile and Pepitas", "Organic Spinach and Artichoke"],
-//       '8 oz': ["Apple Pie", "Avocado Serrano", "Bombay", "Caramelized Onion", "Chigostle", "Chipotle", "Chocolate", "Cilantro", "Dill Pickle", "Eggplant & Olive", "Heat", "Hatch", "Original", "Panang", "Pesto", "Pizza Roll", "Pimento", "Pumpkin Pie", "Ranch", "Salted Caramel"],
-//       '15 oz': ["Chipotle", "Cilantro", "Original"],
-//       '24 oz': ["Chipotle", "Cilantro", "Organic Chipotle"]
-//     }
-//   };
-  
   
