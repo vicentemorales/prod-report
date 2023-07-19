@@ -1,14 +1,15 @@
 
 import './App.css';
-
-import EntryForm from './components/EntryForm';
+import TabsComponent from './components/Tabs';
 import NavBar from './components/NavBar';
+
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <EntryForm />
+      <TabsComponent />
+
     </div>
   );
 }

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { FormControl, InputLabel, MenuItem, Select, TextField, Button } from '@mui/material';
 import { Clients } from '../data/data'; // Importing Clients from separate file
@@ -7,6 +6,10 @@ const EntryForm = () => {
   const [selectedClient, setSelectedClient] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const [flavorSets, setFlavorSets] = useState([{ size: '', flavor: '', amount: '', leaks: '', samples: '' }]);
+  const [selectedStartHour, setSelectedStartHour] = useState('');
+  const [selectedStartMinute, setSelectedStartMinute] = useState('');
+  const [selectedFinishHour, setSelectedFinishHour] = useState('');
+  const [selectedFinishMinute, setSelectedFinishMinute] = useState('');
 
   const handleClientChange = (e) => {
     const selectedClient = e.target.value;
@@ -61,26 +64,125 @@ const EntryForm = () => {
     setFlavorSets(newFlavorSets);
   };
 
+  const hourOptions = [];
+  const minuteOptions = [];
+
+  for (let hour = 0; hour <= 24; hour++) {
+    hourOptions.push(
+      <MenuItem key={hour} value={hour}>
+        {hour}
+      </MenuItem>
+    );
+  }
+
+  for (let minute = 0; minute <= 59; minute++) {
+    minuteOptions.push(
+      <MenuItem key={minute} value={minute}>
+        {minute}
+      </MenuItem>
+    );
+  }
+
+  const handleStartHourChange = (e) => {
+    const selectedStartHour = e.target.value;
+    setSelectedStartHour(selectedStartHour);
+  };
+
+  const handleStartMinuteChange = (e) => {
+    const selectedStartMinute = e.target.value;
+    setSelectedStartMinute(selectedStartMinute);
+  };
+
+  const handleFinishHourChange = (e) => {
+    const selectedFinishHour = e.target.value;
+    setSelectedFinishHour(selectedFinishHour);
+  };
+
+  const handleFinishMinuteChange = (e) => {
+    const selectedFinishMinute = e.target.value;
+    setSelectedFinishMinute(selectedFinishMinute);
+  };
+
   return (
     <div className='formContainer' style={{ padding: '15px' }}>
-      <FormControl sx={{ m: 1, minWidth: 200 }}>
-        <InputLabel id="client-label" sx={{ background: 'white' }}>Select a client</InputLabel>
-        <Select
-          labelId="client-label"
-          id="client-select"
-          value={selectedClient}
-          onChange={handleClientChange}
-        >
-          <MenuItem value="">
-            <em>-- Select Client --</em>
-          </MenuItem>
-          {Object.keys(Clients).map((key) => (
-            <MenuItem key={key} value={key}>
-              {Clients[key].client_name}
+      <div>
+        <FormControl sx={{ m: 1, minWidth: 200 }}>
+          <InputLabel id="client-label" sx={{ background: 'white' }}>Select a client</InputLabel>
+          <Select
+            labelId="client-label"
+            id="client-select"
+            value={selectedClient}
+            onChange={handleClientChange}
+          >
+            <MenuItem value="">
+              <em>-- Select Client --</em>
             </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+            {Object.keys(Clients).map((key) => (
+              <MenuItem key={key} value={key}>
+                {Clients[key].client_name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="start-time-label" sx={{ background: 'white' }}>Start Time:</InputLabel>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Select
+              labelId="start-hour-label"
+              id="start-hour-select"
+              value={selectedStartHour}
+              onChange={handleStartHourChange}
+            >
+              <MenuItem value="">
+                <em>-- Select Hour --</em>
+              </MenuItem>
+              {hourOptions}
+            </Select>
+            <span>:</span>
+            <Select
+              labelId="start-minute-label"
+              id="start-minute-select"
+              value={selectedStartMinute}
+              onChange={handleStartMinuteChange}
+            >
+              <MenuItem value="">
+                <em>-- Select Minute --</em>
+              </MenuItem>
+              {minuteOptions}
+            </Select>
+          </div>
+        </FormControl>
+
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="finish-time-label" sx={{ background: 'white' }}>End Time:</InputLabel>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Select
+              labelId="finish-hour-label"
+              id="finish-hour-select"
+              value={selectedFinishHour}
+              onChange={handleFinishHourChange}
+            >
+              <MenuItem value="">
+                <em>-- Select Hour --</em>
+              </MenuItem>
+              {hourOptions}
+            </Select>
+            <span>:</span>
+            <Select
+              labelId="finish-minute-label"
+              id="finish-minute-select"
+              value={selectedFinishMinute}
+              onChange={handleFinishMinuteChange}
+            >
+              <MenuItem value="">
+                <em>-- Select Minute --</em>
+              </MenuItem>
+              {minuteOptions}
+            </Select>
+          </div>
+        </FormControl>
+      </div>
       <br />
       <div style={{ border: '1px solid lightgrey', borderRadius: '4px', padding: '5px' }}>
         {flavorSets.map((flavorSet, index) => (
